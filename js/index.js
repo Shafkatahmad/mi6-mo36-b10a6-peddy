@@ -1,3 +1,10 @@
+const removeActiveClass = () => {
+  const buttons = document.getElementsByClassName('category-btn');
+  for(let btn of buttons) {
+    btn.classList.remove('active');
+  }
+}
+
 const laodCatetories = async () => {
   const res = await fetch(`https://openapi.programming-hero.com/api/peddy/categories`)
   const data = await res.json()
@@ -13,7 +20,7 @@ const displayCategories = (categories) => {
     
     const div = document.createElement("div");
     div.innerHTML = `
-    <button id=${category.id} onclick="loadCategory('${category.category}')" class="btn bg-white rounded-xl border border-gray-300 p-6"><img class="max-w-[42px] max-h-[42px] object-cover" src=${category.category_icon}/> ${category.category}</button>
+    <button id=${category.category} onclick="loadCategory('${category.category}')" class="category-btn btn bg-white rounded-xl border border-gray-300 p-6"><img class="max-w-[42px] max-h-[42px] object-cover" src=${category.category_icon}/> ${category.category}</button>
     `
 
     petCategories.appendChild(div);
@@ -24,6 +31,11 @@ const loadCategory = async (category) => {
 
   const res = await fetch(`https://openapi.programming-hero.com/api/peddy/category/${category}`)
   const data = await res.json();
+
+  removeActiveClass();
+  const activeBtn = document.getElementById(`${category}`);
+  activeBtn.classList.add('active');
+
   displayAllPets(data.data);
 }
 
