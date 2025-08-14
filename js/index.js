@@ -36,7 +36,11 @@ const loadCategory = async (category) => {
   const activeBtn = document.getElementById(`${category}`);
   activeBtn.classList.add('active');
 
-  displayAllPets(data.data);
+  document.getElementById('spinner').classList.remove('hidden');
+  setTimeout( function() {
+    displayAllPets(data.data);
+  },2000)
+  // displayAllPets(data.data);
 }
 
 
@@ -48,6 +52,7 @@ const loadAllPets = async () => {
 }
 
 const displayAllPets = (pets) => {
+  document.getElementById('spinner').classList.add('hidden');
   const petsContainer = document.getElementById('petsContainer');
   petsContainer.innerHTML = "";
 
@@ -91,7 +96,7 @@ const displayLikedPet = (petData) => {
   const likedPets = document.getElementById('liked-pets');
   const div = document.createElement("div");
   div.innerHTML = `
-  <img class="rounded-lg" src='${petData.image}'/>
+  <img class="rounded-lg border border-red-500" src='${petData.image}'/>
   `
 
   likedPets.appendChild(div);
