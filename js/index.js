@@ -69,7 +69,7 @@ const displayAllPets = (pets) => {
     <p class="text-gray-500">${pet.price?pet.price : "Not available"}</p>
     <hr class="text-gray-500">
     <div class="card-actions justify-between">
-      <button class="btn "><i class="fa-regular fa-thumbs-up"></i></button>
+      <button id=${pet.petId} onclick="loadLikedPet(${pet.petId})" class="btn "><i class="fa-regular fa-thumbs-up"></i></button>
       <button class="btn text-[#0E7A81]">Adopt</button>
       <button class="btn text-[#0E7A81]">Details</button>
     </div>
@@ -78,6 +78,23 @@ const displayAllPets = (pets) => {
     `
     petsContainer.appendChild(div);
   }
+}
+
+const loadLikedPet = async (id) => {
+
+  const res = await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${id}`);
+  const data = await res.json();
+  displayLikedPet(data.petData);
+}
+
+const displayLikedPet = (petData) => {
+  const likedPets = document.getElementById('liked-pets');
+  const div = document.createElement("div");
+  div.innerHTML = `
+  <img class="rounded-lg" src='${petData.image}'/>
+  `
+
+  likedPets.appendChild(div);
 }
 
 loadAllPets();
