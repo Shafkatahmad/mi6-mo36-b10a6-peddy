@@ -93,7 +93,7 @@ const displayAllPets = (pets) => {
     <hr class="text-gray-500">
     <div class="card-actions justify-between">
       <button id=${pet.petId} onclick="loadLikedPet(${pet.petId})" class="btn "><i class="fa-regular fa-thumbs-up"></i></button>
-      <button class="btn text-[#0E7A81]">Adopt</button>
+      <button onclick="showAdopt()" class="btn text-[#0E7A81]">Adopt</button>
       <button onclick="petDetails(${pet.petId})" class="btn text-[#0E7A81]">Details</button>
     </div>
   </div>
@@ -122,6 +122,36 @@ const displayLikedPet = (petData) => {
 
   likedPets.appendChild(div);
 }
+
+const showAdopt = () => {
+  const countdownEl = document.querySelector('#show-adopt .countdown span');
+  let count = 3;
+
+  // show modal
+  my_modal_1.showModal();
+  document.getElementById('show-adopt').classList.remove("hidden");
+
+  // reset countdown display
+  countdownEl.textContent = count;
+  countdownEl.style.setProperty('--value', count);
+
+  // start interval
+  const timer = setInterval(() => {
+    count--;
+    countdownEl.textContent = count;
+    countdownEl.style.setProperty('--value', count);
+
+    if (count <= 0) {
+      clearInterval(timer);
+      removeAdopt();
+    }
+  }, 1000);
+};
+
+const removeAdopt = () => {
+  my_modal_1.close(); // closes the <dialog>
+  document.getElementById('show-adopt').classList.add("hidden");
+};
 
 const petDetails = async (petId) => {
   const res = await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${petId}`);
