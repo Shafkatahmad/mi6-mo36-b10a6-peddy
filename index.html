@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peddy</title>
+    <!-- daisiUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/2cab50fa68.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .font {
+        font-family: "Lato", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="font">
+    <header class="w-11/12 mx-auto">
+      <nav>
+        <div class="navbar">
+          <div class="navbar-start flex gap-3">
+            <div class="logo">
+              <img src="./images/logo.webp" alt="" />
+            </div>
+            <a class="text-2xl font-bold">Peddy</a>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 text-sm text-gray-500">
+              <li><a>Home</a></li>
+              <li><a>Shop</a></li>
+              <li><a>Contact</a></li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <i class="fa-regular fa-user"></i>
+          </div>
+        </div>
+      </nav>
+      <!-- hero section -->
+      <div class="flex flex-col items-center text-center mt-10">
+        <div class="max-w-2/3">
+          <p class="text-lg font-bold text-gray-500 mb-8">
+            Bringing Families Together ❤️‍🔥
+          </p>
+          <h2 class="text-7xl font-bold">
+            Your Path to Adoption <br />Starts Here
+          </h2>
+          <p class="text-sm mt-8">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a.
+          </p>
+          <a class="bg-[#0E7A81] text-white px-8 py-4 rounded-xl" href=""
+            >View More</a
+          >
+        </div>
+        <img src="./images/pet.webp" alt="" />
+      </div>
+    </header>
+
+    <main class="w-11/12 mx-auto flex flex-col items-center">
+      <!-- adopt  -->
+      <h2 class="text-3xl font-bold mb-8">Adopt Your Best Friend</h2>
+      <p class="text-sm text-gray-500 mb-8">
+        It is a long established fact that a reader will be distracted by the
+        readable content of a page when looking at its layout. The point of
+        using Lorem Ipsum is that it has a.
+      </p>
+
+      <!-- pet categories -->
+      <div id="pet-categories" class="flex gap-6 justify-between"></div>
+
+      <section class="w-full">
+        <!-- sort by price btn -->
+        <div class="flex justify-between items-center mb-8">
+          <h4 class="font-bold">Best Deat For You</h4>
+          <button class="btn bg-[#0E7A81] text-white">Sort by Price</button>
+        </div>
+
+        <div id="petsContainer" class="grid grid-cols-3 gap-6"></div>
+      </section>
+    </main>
+
+    <footer
+      class="footer sm:footer-horizontal bg-black text-base-content text-white p-10"
+    >
+      <nav>
+        <h6 class="footer-title">Services</h6>
+        <a class="link link-hover">Branding</a>
+        <a class="link link-hover">Design</a>
+        <a class="link link-hover">Marketing</a>
+        <a class="link link-hover">Advertisement</a>
+      </nav>
+      <nav>
+        <h6 class="footer-title">Company</h6>
+        <a class="link link-hover">About us</a>
+        <a class="link link-hover">Contact</a>
+        <a class="link link-hover">Jobs</a>
+        <a class="link link-hover">Press kit</a>
+      </nav>
+      <nav>
+        <h6 class="footer-title">Legal</h6>
+        <a class="link link-hover">Terms of use</a>
+        <a class="link link-hover">Privacy policy</a>
+        <a class="link link-hover">Cookie policy</a>
+      </nav>
+      <form>
+        <h6 class="footer-title">Newsletter</h6>
+        <fieldset class="w-80">
+          <label>Enter your email address</label>
+          <div class="join">
+            <input
+              type="text"
+              placeholder="username@site.com"
+              class="input input-bordered join-item"
+            />
+            <button class="btn btn-primary join-item">Subscribe</button>
+          </div>
+        </fieldset>
+      </form>
+    </footer>
+
+    <script src="./js/index.js"></script>
+  </body>
+</html>
