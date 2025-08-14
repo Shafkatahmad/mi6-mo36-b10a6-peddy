@@ -94,7 +94,7 @@ const displayAllPets = (pets) => {
     <div class="card-actions justify-between">
       <button id=${pet.petId} onclick="loadLikedPet(${pet.petId})" class="btn "><i class="fa-regular fa-thumbs-up"></i></button>
       <button class="btn text-[#0E7A81]">Adopt</button>
-      <button onclick="petDetails(${pet.petId})" class="btn text-[#0E7A81] my_modal_4.showModal()">Details</button>
+      <button onclick="petDetails(${pet.petId})" class="btn text-[#0E7A81]">Details</button>
     </div>
   </div>
 </div>
@@ -131,8 +131,27 @@ const petDetails = async (petId) => {
   const modalContainer = document.getElementById('modal-container');
   modalContainer.innerHTML = `
   <dialog id="my_modal_4" class="modal">
-  <div class="modal-box w-11/12 max-w-5xl">
-    <img src=${data.image}/>
+  <div class="modal-box w-11/12 max-w-5xl mb-4">
+    <img class="w-full rounded-xl mb-6" src=${data.petData.image}/>
+    <h2 class="text-2xl font-bold">${data.petData.pet_name? data.petData.pet_name : "Not Available"}</h2>
+    <div class="grid grid-cols-2 gap-1 mb-4">
+    <p>${data.petData.breed? data.petData.breed : "Not Available"}</p>
+    <p>${data.petData.date_of_birth? data.petData.date_of_birth : "Not Available"}</p>
+    <p>${data.petData.gender? data.petData.gender : "Not Available"}</p>
+    <p>${data.petData.price? data.petData.price : "Not Available"}</p>
+    <p>${data.petData.vaccinated_status? data.petData.vaccinated_status : "Not Available"}</p>
+    </div>
+    <hr>
+    <div class="mt-4 mb-4">
+        <h3 class="mb-3">Details Information</h3>
+        <p>${data.petData.pet_details? data.petData.pet_details : "Not Available"}</p>
+    </div>
+    <div class="w-full">
+      <form method="dialog">
+        <!-- if there is a button, it will close the modal -->
+        <button class="btn w-full bg-green-200 rounded-xl">Calcel</button>
+      </form>
+    </div>
   </div>
 </dialog>
   `
