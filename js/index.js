@@ -24,7 +24,7 @@ const loadCategory = async (category) => {
 
   const res = await fetch(`https://openapi.programming-hero.com/api/peddy/category/${category}`)
   const data = await res.json();
-  console.log(data);
+  displayAllPets(data.data);
 }
 
 
@@ -37,6 +37,7 @@ const loadAllPets = async () => {
 
 const displayAllPets = (pets) => {
   const petsContainer = document.getElementById('petsContainer');
+  petsContainer.innerHTML = "";
 
   for(let pet of pets) {
     const div = document.createElement("div");
