@@ -135,40 +135,43 @@
     <footer
       class="footer sm:footer-horizontal bg-black text-base-content text-white p-10"
     >
-      <nav>
-        <h6 class="footer-title">Services</h6>
-        <a class="link link-hover">Branding</a>
-        <a class="link link-hover">Design</a>
-        <a class="link link-hover">Marketing</a>
-        <a class="link link-hover">Advertisement</a>
+      <div class="w-11/12 mx-auto flex justify-between">
+        <nav>
+        <div class="flex items-center gap-3 mb-6">
+          <img class="w-[24px] h-[24px]" src="./images/logo.webp" alt="">
+          <h3 class="text-2xl font-bold">Peddy</h3>
+        </div>
+        <p class="text-gray-200 mb-1">Location: av. Washington 165, NY CA</p>
+        <p class="text-gray-200 mb-1">54003</p>
+        <p class="text-gray-200 mb-1">Phone: +31 85 964 47 25</p>
+        <p class="text-gray-200 mb-1">Email: info@yourdomain.com</p>
+        <p class="text-gray-200 mb-1">Openings hours: 9.00 AM - 5.00 PM</p>
       </nav>
-      <nav>
-        <h6 class="footer-title">Company</h6>
-        <a class="link link-hover">About us</a>
-        <a class="link link-hover">Contact</a>
-        <a class="link link-hover">Jobs</a>
-        <a class="link link-hover">Press kit</a>
-      </nav>
-      <nav>
-        <h6 class="footer-title">Legal</h6>
-        <a class="link link-hover">Terms of use</a>
-        <a class="link link-hover">Privacy policy</a>
-        <a class="link link-hover">Cookie policy</a>
-      </nav>
+      <div>
+        <h6 class="text-lg font-bold mb-8">Useful Links</h6>
+        <div class="flex flex-col gap-1">
+          <a href="" class="text-gray-200 mb-1">Home</a>
+          <a href=p" class="text-gray-200 mb-1">About Us</a>
+          <a href=p" class="text-gray-200 mb-1">Animals</a>
+          <a href=p" class="text-gray-200 mb-1">Foundation</a>
+          <a href=p" class="text-gray-200 mb-1">Contact</a>
+        </div>
+      </div>
+      
       <form>
-        <h6 class="footer-title">Newsletter</h6>
+        <h6 class="text-lg font-bold mb-8">Drop a message</h6>
         <fieldset class="w-80">
-          <label>Enter your email address</label>
-          <div class="join">
+          <div class="w-[240px]">
             <input
               type="text"
-              placeholder="username@site.com"
-              class="input input-bordered join-item"
+              placeholder="Enter your email"
+              class="text-black bg-gray-200 input input-bordered join-item mb-4"
             />
-            <button class="btn btn-primary join-item">Subscribe</button>
+            <button class="w-full btn btn-primary join-item">Subscribe</button>
           </div>
         </fieldset>
       </form>
+      </div>
     </footer>
 
     <script src="./js/index.js"></script>
