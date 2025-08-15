@@ -79,7 +79,7 @@ const displayAllPets = (pets) => {
   for(let pet of pets) {
     const div = document.createElement("div");
     div.innerHTML = `
-    <div class="card bg-base-100  shadow-sm p-5">
+    <div class="card bg-base-100  shadow-sm md:p-5 lg:p-5">
   <figure>
     <img
       class=" object-cover rounded-lg"
@@ -117,7 +117,7 @@ const displayLikedPet = (petData) => {
   const div = document.createElement("div");
   div.classList.add("border");
   div.classList.add("border-blue-500");
-  div.classList.add("h-fit");
+  div.classList.add("max-h-fit");
   div.innerHTML = `
   <div class="border border-yellow-500"><img class="rounded-lg border border-red-500" src='${petData.image}'/></div>
   `

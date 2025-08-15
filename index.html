@@ -54,21 +54,19 @@
       </nav>
       <!-- hero section -->
       <div class="flex flex-col items-center text-center mt-10">
-        <div class="max-w-2/3">
+        <div class="max-w-2/3 mb-12">
           <p class="text-lg font-bold text-gray-500 mb-8">
             Bringing Families Together ❤️‍🔥
           </p>
           <h2 class="text-7xl font-bold">
             Your Path to Adoption <br />Starts Here
           </h2>
-          <p class="text-sm mt-8">
+          <p class="text-sm mt-8 mb-8">
             It is a long established fact that a reader will be distracted by
             the readable content of a page when looking at its layout. The point
             of using Lorem Ipsum is that it has a.
           </p>
-          <a class="bg-[#0E7A81] text-white px-8 py-4 rounded-xl" href=""
-            >View More</a
-          >
+          <a class="bg-[#0E7A81] text-white px-8 py-4 rounded-xl" href="">View More</a>
         </div>
         <img src="./images/pet.webp" alt="" />
       </div>
@@ -84,7 +82,7 @@
       </p>
 
       <!-- pet categories -->
-      <div id="pet-categories" class="flex gap-6 justify-between"></div>
+      <div id="pet-categories" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 justify-between"></div>
       <div id="spinner" class="hidden mt-6">
         <span class="loading loading-bars loading-xl"></span>
       </div>
@@ -98,14 +96,14 @@
           </button>
         </div>
 
-        <div class="grid grid-cols-4 gap-6 mb-20">
+        <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-4 gap-6 mb-20">
           <div
             id="petsContainer"
             class="col-span-3 grid grid-cols-3 gap-6"
           ></div>
           <div
             id="liked-pets"
-            class="h-full grid grid-cols-2 gap-5 border border-gray-300 rounded-xl p-5"
+            class=" grid grid-cols-2 gap-5 border border-gray-300 rounded-xl p-5"
           ></div>
         </div>
       </section>
@@ -135,7 +133,7 @@
     <footer
       class="footer sm:footer-horizontal bg-black text-base-content text-white p-10"
     >
-      <div class="w-11/12 mx-auto flex justify-between">
+      <div class="w-11/12 mx-auto md:flex md:justify-between lg:flex lg:justify-between">
         <nav>
         <div class="flex items-center gap-3 mb-6">
           <img class="w-[24px] h-[24px]" src="./images/logo.webp" alt="">
