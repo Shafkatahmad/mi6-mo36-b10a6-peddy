@@ -88,9 +88,9 @@ const displayAllPets = (pets) => {
   </figure>
   <div class="card-body">
     <h2 class="card-title text-xl font-bold">${pet.pet_name}</h2>
-    <p class="text-gray-500">${pet.breed?pet.breed : "Not available"}</p>
-    <p class="text-gray-500">${pet.date_of_birth?pet.date_of_birth : "Not available"}</p>
-    <p class="text-gray-500">${pet.gender?pet.gender : "Not available"}</p>
+    <p class="text-gray-500"><i class="fa-solid fa-dice-four mr-1"></i> ${pet.breed?pet.breed : "Not available"}</p>
+    <div class="flex gap-1 items-center"><i class="fa-regular fa-calendar"></i> <p class="text-gray-500">${pet.date_of_birth? pet.date_of_birth : "Not available"}</p></div>
+    <div class="flex gap-1 items-center"><i class="fa-solid fa-mars"></i> <p class="text-gray-500">${pet.gender?pet.gender : "Not available"}</p></div>
     <p class="text-gray-500">price: ${pet.price?pet.price : "Not available"} $</p>
     <hr class="text-gray-500">
     <div class="card-actions justify-between">
