@@ -59,6 +59,8 @@ const loadAllPets = async () => {
 }
 
 const displayAllPets = (pets) => {
+  // adopt button disabled id
+  let i = 1;
   document.getElementById('spinner').classList.add('hidden');
   const petsContainer = document.getElementById('petsContainer');
   petsContainer.innerHTML = "";
@@ -93,7 +95,7 @@ const displayAllPets = (pets) => {
     <hr class="text-gray-500">
     <div class="card-actions justify-between">
       <button id=${pet.petId} onclick="loadLikedPet(${pet.petId})" class="btn "><i class="fa-regular fa-thumbs-up"></i></button>
-      <button onclick="showAdopt()" class="btn text-[#0E7A81]">Adopt</button>
+      <button id="${pet.petId+i}" onclick="showAdopt(${pet.petId+i})" class="btn text-[#0E7A81]">Adopt</button>
       <button onclick="petDetails(${pet.petId})" class="btn text-[#0E7A81]">Details</button>
     </div>
   </div>
@@ -123,7 +125,7 @@ const displayLikedPet = (petData) => {
   likedPets.appendChild(div);
 }
 
-const showAdopt = () => {
+const showAdopt = (petId) => {
   const countdownEl = document.querySelector('#show-adopt .countdown span');
   let count = 3;
 
@@ -143,14 +145,20 @@ const showAdopt = () => {
 
     if (count <= 0) {
       clearInterval(timer);
-      removeAdopt();
+      removeAdopt(petId);
     }
   }, 1000);
 };
 
-const removeAdopt = () => {
+const removeAdopt = (petId) => {
   my_modal_1.close(); // closes the <dialog>
   document.getElementById('show-adopt').classList.add("hidden");
+
+  // disable the button
+  document.getElementById(petId).disabled = true;
+  document.getElementById(petId).classList.add("bg-gray-300")
+  document.getElementById(petId).classList.add("text-gray-500")
+  document.getElementById(petId).innerText = `adopted`;
 };
 
 const petDetails = async (petId) => {
