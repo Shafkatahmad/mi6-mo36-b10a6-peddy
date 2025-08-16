@@ -115,11 +115,11 @@ const loadLikedPet = async (id) => {
 const displayLikedPet = (petData) => {
   const likedPets = document.getElementById('liked-pets');
   const div = document.createElement("div");
-  div.classList.add("border");
-  div.classList.add("border-blue-500");
+  // div.classList.add("border");
+  // div.classList.add("border-blue-500");
   // div.classList.add("w-1/3");
   div.innerHTML = `
-  <div class="border border-yellow-500"><img class="rounded-lg border border-red-500" src='${petData.image}'/></div>
+  <div class=""><img class="rounded-lg" src='${petData.image}'/></div>
   `
 
   likedPets.appendChild(div);
