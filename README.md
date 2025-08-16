@@ -40,4 +40,4 @@ This is a pet adoption platform where users can browse and adopt pets. Haven't a
 
 ## Live Link of This Project:
 
-https://peddy-the-petshop.netlify.app/
+https://peddy-the-petshopp.netlify.app/
