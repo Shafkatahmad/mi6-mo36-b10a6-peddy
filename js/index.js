@@ -117,7 +117,7 @@ const displayLikedPet = (petData) => {
   const div = document.createElement("div");
   div.classList.add("border");
   div.classList.add("border-blue-500");
-  div.classList.add("max-h-fit");
+  // div.classList.add("w-1/3");
   div.innerHTML = `
   <div class="border border-yellow-500"><img class="rounded-lg border border-red-500" src='${petData.image}'/></div>
   `
@@ -172,17 +172,17 @@ const petDetails = async (petId) => {
   <div class="modal-box w-11/12 max-w-5xl mb-4">
     <img class="w-full rounded-xl mb-6" src=${data.petData.image}/>
     <h2 class="text-2xl font-bold">${data.petData.pet_name? data.petData.pet_name : "Not Available"}</h2>
-    <div class="grid grid-cols-2 gap-1 mb-4">
-    <p>${data.petData.breed? data.petData.breed : "Not Available"}</p>
-    <p>${data.petData.date_of_birth? data.petData.date_of_birth : "Not Available"}</p>
-    <p>${data.petData.gender? data.petData.gender : "Not Available"}</p>
-    <p>${data.petData.price? data.petData.price : "Not Available"}</p>
-    <p>${data.petData.vaccinated_status? data.petData.vaccinated_status : "Not Available"}</p>
+    <div class="grid grid-cols-2 gap-1 text-gray-500 mb-4">
+    <p><i class="fa-solid fa-dice-four"></i> Breed: ${data.petData.breed? data.petData.breed : "Not Available"}</p>
+    <p><i class="fa-regular fa-calendar"></i> Birth: ${data.petData.date_of_birth? data.petData.date_of_birth : "Not Available"}</p>
+    <p><i class="fa-solid fa-mars"></i> Gender: ${data.petData.gender? data.petData.gender : "Not Available"}</p>
+    <p><i class="fa-solid fa-dollar-sign"></i> Price ${data.petData.price? data.petData.price : "Not Available"}</p>
+    <p><i class="fa-solid fa-syringe"></i> Vaccinated status: ${data.petData.vaccinated_status? data.petData.vaccinated_status : "Not Available"}</p>
     </div>
     <hr>
     <div class="mt-4 mb-4">
-        <h3 class="mb-3">Details Information</h3>
-        <p>${data.petData.pet_details? data.petData.pet_details : "Not Available"}</p>
+        <h3 class="font-semibold mb-3">Details Information</h3>
+        <p class="text-gray-500">${data.petData.pet_details? data.petData.pet_details : "Not Available"}</p>
     </div>
     <div class="w-full">
       <form method="dialog">
